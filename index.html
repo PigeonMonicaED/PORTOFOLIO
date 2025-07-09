@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,25 +11,18 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11.1.5/swiper-bundle.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Mengimpor font Inter dari Google Fonts */
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
-
-        /* Gaya dasar untuk body, menggunakan font Inter dan tema gelap yang lebih modern */
         body {
             font-family: 'Inter', sans-serif;
             background-color: #1a202c;
             color: #e2e8f0;
             line-height: 1.7;
         }
-
-        /* Kontainer utama untuk konten, responsif dengan padding */
         .container {
             max-width: 1280px;
             margin: 0 auto;
             padding: 1.5rem;
         }
-
-        /* Gaya header */
         .header {
             background-color: #2d3748;
             border-bottom: 1px solid #4a5568;
@@ -41,8 +34,6 @@
             backdrop-filter: blur(8px);
             background-color: rgba(22, 27, 34, 0.9);
         }
-
-        /* Gaya bagian hero (halaman utama) */
         .hero {
             background: linear-gradient(to right, #3b82f6, #6366f1);
             color: white;
@@ -81,8 +72,6 @@
             font-size: 1.75rem;
             font-weight: 300;
         }
-
-        /* Gaya judul bagian */
         .section-title {
             color: #3b82f6;
             font-weight: 800;
@@ -103,8 +92,6 @@
             background-color: #6366f1;
             border-radius: 3px;
         }
-
-        /* Gaya kartu (untuk projek, keahlian, dll.) */
         .card {
             background-color: #2d3748;
             border-radius: 1rem;
@@ -112,14 +99,13 @@
             padding: 2.5rem;
             transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border-color 0.3s ease;
             border: 1px solid #4a5568;
+            width: 100%;
         }
         .card:hover {
             transform: translateY(-10px);
             box-shadow: 0 16px 32px rgba(0,0,0,0.6);
             border-color: #3b82f6;
         }
-
-        /* Gaya tombol utama */
         .btn-primary {
             background-color: #3b82f6;
             color: white;
@@ -133,14 +119,14 @@
             align-items: center;
             justify-content: center;
             letter-spacing: 0.05em;
+            border: none;
+            cursor: pointer;
         }
         .btn-primary:hover {
             background-color: #2563eb;
             transform: translateY(-3px);
             box-shadow: 0 8px 16px rgba(0,0,0,0.4);
         }
-
-        /* Gaya tombol sekunder */
         .btn-secondary {
             background-color: #4a5568;
             color: #e2e8f0;
@@ -161,8 +147,6 @@
             box-shadow: 0 6px 12px rgba(0,0,0,0.3);
             border-color: #6366f1;
         }
-
-        /* Gaya input formulir */
         input[type="email"],
         input[type="password"],
         input[type="text"],
@@ -187,8 +171,6 @@
             color: #a0aec0;
             opacity: 0.9;
         }
-
-        /* Gaya footer */
         .footer {
             background-color: #1a202c;
             color: #e2e8f0;
@@ -198,11 +180,18 @@
             border-radius: 1.5rem;
             box-shadow: 0 -6px 12px rgba(0,0,0,0.3);
         }
-
-        /* Penyesuaian untuk Owl Carousel */
         .owl-carousel .item {
             padding: 1.5rem;
         }
+        
+        .owl-carousel .owl-item {
+            display: flex;
+        }
+        .owl-carousel .item {
+            flex: 1;
+            display: flex;
+        }
+
         .owl-nav button {
             background: #3b82f6 !important;
             color: white !important;
@@ -241,8 +230,6 @@
             background: #3b82f6 !important;
             border-color: #6366f1;
         }
-
-        /* Tombol Scroll to Top */
         #scrollToTopBtn {
             display: none;
             position: fixed;
@@ -264,8 +251,6 @@
             background-color: #2563eb;
             transform: translateY(-5px) scale(1.05);
         }
-
-        /* Bagian Paralaks */
         .parallax-section {
             background-image: url('https://placehold.co/1920x1080/6366f1/e2e8f0?text=Creative+Design');
             background-size: cover;
@@ -301,8 +286,6 @@
             font-weight: 300;
             margin-bottom: 2rem;
         }
-
-        /* Mobile Menu Overlay */
         .mobile-menu-overlay {
             position: fixed;
             top: 0;
@@ -351,9 +334,6 @@
         .mobile-menu-overlay ul li a:hover {
             color: #3b82f6;
         }
-
-
-        /* Penyesuaian responsif */
         @media (max-width: 1024px) {
             .hero h1 { font-size: 3.5rem; }
             .hero p { font-size: 1.5rem; }
@@ -364,7 +344,6 @@
             .header nav ul { display: none; }
             .header .hamburger-menu { display: block; }
         }
-
         @media (max-width: 480px) {
             .section-title { font-size: 2rem; margin-bottom: 2rem; }
             .hero { padding: 4rem 1rem; }
@@ -380,7 +359,6 @@
             .mobile-menu-overlay ul li a { font-size: 1.5rem; }
             #scrollToTopBtn { width: 45px; height: 45px; font-size: 20px; bottom: 15px; right: 15px; }
         }
-
         @media (max-width: 768px) {
             .section-title { font-size: 2.5rem; }
             .hero { padding: 5rem 0; }
@@ -396,8 +374,6 @@
             .parallax-content h2 { font-size: 2rem; }
             .parallax-content p { font-size: 1rem; }
         }
-
-        /* Custom Message Box Styles */
         .custom-message-box-overlay {
             position: fixed;
             top: 0;
@@ -450,110 +426,207 @@
         .custom-message-box button:hover {
             background-color: #2563eb;
         }
+
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        .modal-container {
+            background-color: #2d3748;
+            color: #e2e8f0;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            max-width: 800px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            border: 1px solid #4a5568;
+            position: relative;
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+        }
+        .modal-overlay.active .modal-container {
+            transform: translateY(0);
+        }
+        .modal-close-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 2rem;
+            color: #a0aec0;
+            cursor: pointer;
+            transition: color 0.2s ease, transform 0.2s ease;
+        }
+        .modal-close-btn:hover {
+            color: #3b82f6;
+            transform: rotate(90deg);
+        }
+        .modal-header h3 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #3b82f6;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #4a5568;
+            padding-bottom: 1rem;
+        }
+        .modal-body h4 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #6366f1;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .modal-body p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #cbd5e0;
+        }
+        .modal-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+        .modal-skill-tag {
+            background-color: #4a5568;
+            color: #e2e8f0;
+            padding: 0.3rem 0.8rem;
+            border-radius: 0.5rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        .modal-links {
+            margin-top: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            border-top: 1px solid #4a5568;
+            padding-top: 1.5rem;
+        }
+        .modal-link {
+            display: inline-flex;
+            align-items: center;
+            background-color: #3b82f6;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            transition: background-color 0.2s ease;
+        }
+        .modal-link:hover {
+            background-color: #2563eb;
+        }
+        .modal-link i {
+            margin-right: 0.5rem;
+        }
     </style>
 </head>
 <body>
 
-    <!-- Header -->
     <header class="header">
         <nav class="container flex flex-col md:flex-row justify-between items-center">
             <div class="text-3xl font-extrabold text-blue-400 mb-4 md:mb-0">Kaka Fajri Riramsyah<span class="text-indigo-400">.</span></div>
-            <!-- Navigasi Desktop -->
             <ul class="hidden md:flex flex-wrap justify-center space-x-4 md:space-x-6 text-sm md:text-base">
-                <li><a href="#home" class="text-gray-300 hover:text-blue-400 font-medium transition duration-200">Beranda</a></li>
-                <li><a href="#projects" class="text-gray-300 hover:text-blue-400 font-medium transition duration-200">Projek</a></li>
-                <li><a href="#skills" class="text-gray-300 hover:text-blue-400 font-medium transition duration-200">Keahlian</a></li>
-                <li><a href="#certifications" class="text-gray-300 hover:text-blue-400 font-medium transition duration-200">Sertifikasi</a></li>
-                <li><a href="#about" class="text-gray-300 hover:text-blue-400 font-medium transition duration-200">Tentang Saya</a></li>
-                <li><a href="#contact" class="text-gray-300 hover:text-blue-400 font-medium transition duration-200">Kontak</a></li>
+                <li><a href="#home" class="text-gray-300 hover:text-blue-400 font-medium transition duration-200">Home</a></li>
+                <li><a href="#projects" class="text-gray-300 hover:text-blue-400 font-medium transition duration-200">Projects</a></li>
+                <li><a href="#skills" class="text-gray-300 hover:text-blue-400 font-medium transition duration-200">Skills</a></li>
+                <li><a href="#certifications" class="text-gray-300 hover:text-blue-400 font-medium transition duration-200">Certifications</a></li>
+                <li><a href="#about" class="text-gray-300 hover:text-blue-400 font-medium transition duration-200">About Me</a></li>
+                <li><a href="#contact" class="text-gray-300 hover:text-blue-400 font-medium transition duration-200">Contact</a></li>
             </ul>
-            <!-- Hamburger Menu Icon (Mobile) -->
             <button id="hamburger-btn" class="md:hidden text-gray-300 text-4xl focus:outline-none">
                 <i class="bx bx-menu"></i>
             </button>
         </nav>
     </header>
 
-    <!-- Mobile Menu Overlay -->
     <div id="mobile-menu" class="mobile-menu-overlay">
         <button id="close-menu-btn" class="close-btn">
             <i class="bx bx-x"></i>
         </button>
         <ul>
-            <li><a href="#home" class="mobile-nav-link">Beranda</a></li>
-            <li><a href="#projects" class="mobile-nav-link">Projek</a></li>
-            <li><a href="#skills" class="mobile-nav-link">Keahlian</a></li>
-            <li><a href="#certifications" class="mobile-nav-link">Sertifikasi</a></li>
-            <li><a href="#about" class="mobile-nav-link">Tentang Saya</a></li>
-            <li><a href="#contact" class="mobile-nav-link">Kontak</a></li>
+            <li><a href="#home" class="mobile-nav-link">Home</a></li>
+            <li><a href="#projects" class="mobile-nav-link">Projects</a></li>
+            <li><a href="#skills" class="mobile-nav-link">Skills</a></li>
+            <li><a href="#certifications" class="mobile-nav-link">Certifications</a></li>
+            <li><a href="#about" class="mobile-nav-link">About Me</a></li>
+            <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
         </ul>
     </div>
 
-    <!-- Main Content -->
     <main class="container py-8">
 
-        <!-- Hero Section (Halaman Utama) -->
         <section id="home" class="hero mb-20">
             <h1 class="text-5xl md:text-6xl font-extrabold mb-4 animate-fade-in-up">A Journey In <span class="text-cyan-200">Code & Design</span></h1>
             <p class="text-xl md:text-2xl mb-12 animate-fade-in-up delay-200">As an Information Systems student, I discovered my true passion lies not just in analyzing systems, but in the creative process of building them.</p>
-            <a href="#projects" class="btn-primary inline-block animate-fade-in-up delay-400">Lihat Projek Saya <i class="bx bx-right-arrow-alt ml-2"></i></a>
+            <a href="#projects" class="btn-primary inline-block animate-fade-in-up delay-400">View My Projects <i class="bx bx-right-arrow-alt ml-2"></i></a>
         </section>
 
-        <!-- Project Showcase (Halaman Projek) -->
         <section id="projects" class="mb-20">
-            <h2 class="section-title text-4xl md:text-5xl">Projek Saya</h2>
+            <h2 class="section-title text-4xl md:text-5xl">My Projects</h2>
             <div class="owl-carousel owl-theme">
-                <!-- Projek 1 -->
                 <div class="item">
                     <div class="card text-center flex flex-col h-full">
-                        <img src="https://placehold.co/400x250/3b82f6/1a202c?text=SusVara+Website" alt="SusVara Website" class="w-full h-48 object-cover rounded-md mb-4 border border-blue-600">
+                        <img src="susvara.png" alt="SusVara Website" class="w-full h-48 object-cover rounded-md mb-4 border border-blue-600">
                         <h3 class="text-2xl font-semibold text-blue-300 mb-2">SusVara Website</h3>
                         <p class="text-gray-400 mb-4 flex-grow">A web platform for the IFEST 2025 competition championing "Slow Fashion".</p>
-                        <a href="https://github.com/PigeonMonicaED/SusVara-WEBSITE" target="_blank" class="btn-primary inline-block mt-auto">Lihat di GitHub <i class="bx bxl-github ml-2"></i></a>
+                        <button class="project-detail-btn btn-primary mt-auto" data-project="susvara">Project Details <i class="bx bx-info-circle ml-2"></i></button>
                     </div>
                 </div>
-                <!-- Projek 2 -->
                 <div class="item">
                     <div class="card text-center flex flex-col h-full">
-                        <img src="https://placehold.co/400x250/6366f1/1a202c?text=PMW+GROWEASE" alt="PMW GROWEASE" class="w-full h-48 object-cover rounded-md mb-4 border border-purple-600">
+                        <img src="pmw.jpg" alt="PMW GROWEASE" class="w-full h-48 object-cover rounded-md mb-4 border border-purple-600">
                         <h3 class="text-2xl font-semibold text-indigo-300 mb-2">PMW "GROWEASE"</h3>
                         <p class="text-gray-400 mb-4 flex-grow">An entrepreneurial project proposal for the PMW program, focusing on sustainability.</p>
-                        <a href="#" class="btn-primary inline-block mt-auto" onclick="showMessage('Detail Projek', 'Informasi lebih lanjut mengenai projek ini akan segera tersedia.')">Detail Projek <i class="bx bx-info-circle ml-2"></i></a>
+                        <button class="project-detail-btn btn-primary mt-auto" data-project="growease">Project Details <i class="bx bx-info-circle ml-2"></i></button>
                     </div>
                 </div>
-                <!-- Projek 3 -->
                 <div class="item">
                     <div class="card text-center flex flex-col h-full">
-                        <img src="https://placehold.co/400x250/3FB950/1a202c?text=TenantInn" alt="TenantInn: Homestay Admin System" class="w-full h-48 object-cover rounded-md mb-4 border border-green-600">
+                        <img src="tampilan.png" alt="TenantInn: Homestay Admin System" class="w-full h-48 object-cover rounded-md mb-4 border border-green-600">
                         <h3 class="text-2xl font-semibold text-cyan-300 mb-2">TenantInn: Homestay Admin System</h3>
                         <p class="text-gray-400 mb-4 flex-grow">A full-stack web application to digitize key processes for a homestay.</p>
-                        <a href="https://tenantinn.site/" target="_blank" class="btn-primary inline-block mt-auto">Live Demo <i class="bx bx-link-external ml-2"></i></a>
+                        <button class="project-detail-btn btn-primary mt-auto" data-project="tenantinn">Project Details <i class="bx bx-info-circle ml-2"></i></button>
                     </div>
                 </div>
-                <!-- Projek 4 -->
                 <div class="item">
                     <div class="card text-center flex flex-col h-full">
-                        <img src="https://placehold.co/400x250/F85149/1a202c?text=Face+Recognition" alt="Face Recognition Attendance App" class="w-full h-48 object-cover rounded-md mb-4 border border-red-600">
+                        <img src="absensiwajah.png" alt="Face Recognition Attendance App" class="w-full h-48 object-cover rounded-md mb-4 border border-red-600">
                         <h3 class="text-2xl font-semibold text-yellow-300 mb-2">Face Recognition Attendance App</h3>
                         <p class="text-gray-400 mb-4 flex-grow">A desktop app to replace a manual employee attendance system using facial recognition.</p>
-                        <a href="https://github.com/PigeonMonicaED/face-recognition-re...." target="_blank" class="btn-primary inline-block mt-auto">Lihat di GitHub <i class="bx bxl-github ml-2"></i></a>
+                        <button class="project-detail-btn btn-primary mt-auto" data-project="facerecog">Project Details <i class="bx bx-info-circle ml-2"></i></button>
                     </div>
                 </div>
-                <!-- Projek 5 -->
                 <div class="item">
                     <div class="card text-center flex flex-col h-full">
-                        <img src="https://placehold.co/400x250/3b82f6/1a202c?text=Gen+Z+Cooperative" alt="Gen Z Cooperative Website" class="w-full h-48 object-cover rounded-md mb-4 border border-blue-600">
+                        <img src="wix.png" alt="Gen Z Cooperative Website" class="w-full h-48 object-cover rounded-md mb-4 border border-blue-600">
                         <h3 class="text-2xl font-semibold text-red-300 mb-2">Gen Z Cooperative Website</h3>
                         <p class="text-gray-400 mb-4 flex-grow">A UI/UX design project for a modern cooperative website aimed at a Gen Z audience.</p>
-                        <a href="https://stevani23258.wixsite.com/gen-z-coorperative-2" target="_blank" class="btn-primary inline-block mt-auto">Live Demo <i class="bx bx-link-external ml-2"></i></a>
+                        <button class="project-detail-btn btn-primary mt-auto" data-project="genz">Project Details <i class="bx bx-info-circle ml-2"></i></button>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Skills Section -->
         <section id="skills" class="mb-20">
-            <h2 class="section-title text-4xl md:text-5xl">Toolkit & Keahlian Saya</h2>
+            <h2 class="section-title text-4xl md:text-5xl">My Toolkit & Skills</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div class="card text-center">
                     <i class="bx bx-code-alt text-7xl text-blue-400 mb-4"></i>
@@ -588,57 +661,95 @@
             </div>
         </section>
 
-        <!-- Certifications Section -->
-        <section id="certifications" class="mb-20 hidden">
-            <h2 class="section-title text-4xl md:text-5xl">Sertifikasi Saya</h2>
+        <section id="certifications" class="mb-20">
+            <h2 class="section-title text-4xl md:text-5xl">My Certifications</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Contoh Sertifikasi 1 -->
-                <div class="card text-center">
-                    <i class="bx bxs-award text-7xl text-yellow-400 mb-4"></i>
-                    <h3 class="text-2xl font-semibold text-yellow-300 mb-2">UI/UX Design Specialist</h3>
-                    <p class="text-gray-400 mb-4">Dikeluarkan oleh Design Institute. Menunjukkan keahlian dalam merancang pengalaman pengguna yang intuitif.</p>
-                    <a href="#" class="btn-secondary inline-block mt-auto" onclick="showMessage('Sertifikat', 'Tautan ke sertifikat belum tersedia.')">Lihat Sertifikat <i class="bx bx-link-external ml-2"></i></a>
+
+                <div class="card text-center flex flex-col">
+                    <i class='bx bx-code-alt text-7xl text-blue-400 mb-4'></i>
+                    <h3 class="text-2xl font-semibold text-blue-300 mb-2">HTML, CSS, JS & jQuery</h3>
+                    <p class="text-gray-400 mb-4 flex-grow">Learned web fundamentals and responsive layout principles. (Udemy, 2025)</p>
+                    <a href="https://drive.google.com/file/d/1k2hVZjD-A-JVEWs-6a8Htj1lXyYsOEgU/view?usp=drive_link" target="_blank" class="btn-secondary inline-block mt-auto">View Certificate <i class="bx bx-link-external ml-2"></i></a>
                 </div>
-                <!-- Contoh Sertifikasi 2 -->
-                <div class="card text-center">
-                    <i class="bx bxs-award text-7xl text-green-400 mb-4"></i>
-                    <h3 class="text-2xl font-semibold text-green-300 mb-2">Certified Python Developer</h3>
-                    <p class="text-gray-400 mb-4">Dikeluarkan oleh Code Academy. Memvalidasi kemampuan dalam pengembangan aplikasi menggunakan Python.</p>
-                    <a href="#" class="btn-secondary inline-block mt-auto" onclick="showMessage('Sertifikat', 'Tautan ke sertifikat belum tersedia.')">Lihat Sertifikat <i class="bx bx-link-external ml-2"></i></a>
+
+                <div class="card text-center flex flex-col">
+                    <i class='bx bxl-php text-7xl text-indigo-400 mb-4'></i>
+                    <h3 class="text-2xl font-semibold text-indigo-300 mb-2">PHP with MySQL</h3>
+                    <p class="text-gray-400 mb-4 flex-grow">Practiced back-end development with CRUD functions across eight projects. (Udemy, 2025)</p>
+                    <a href="https://drive.google.com/file/d/10wKYE5GcrrNNbAz5Azh-Z872U2Ze96Nw/view?usp=drive_link" target="_blank" class="btn-secondary inline-block mt-auto">View Certificate <i class="bx bx-link-external ml-2"></i></a>
                 </div>
-                <!-- Contoh Sertifikasi 3 -->
-                <div class="card text-center">
-                    <i class="bx bxs-award text-7xl text-blue-400 mb-4"></i>
-                    <h3 class="text-2xl font-semibold text-blue-300 mb-2">Agile Project Management</h3>
-                    <p class="text-gray-400 mb-4">Dikeluarkan oleh PM Association. Menguasai metodologi Agile untuk manajemen projek yang efisien.</p>
-                    <a href="#" class="btn-secondary inline-block mt-auto" onclick="showMessage('Sertifikat', 'Tautan ke sertifikat belum tersedia.')">Lihat Sertifikat <i class="bx bx-link-external ml-2"></i></a>
+
+                <div class="card text-center flex flex-col">
+                    <i class='bx bx-hash text-7xl text-purple-400 mb-4'></i>
+                    <h3 class="text-2xl font-semibold text-purple-300 mb-2">C# Mastering Course</h3>
+                    <p class="text-gray-400 mb-4 flex-grow">Gained object-oriented programming fundamentals and application building basics. (Udemy, 2025)</p>
+                    <a href="https://drive.google.com/file/d/1umSCEQIFHamAC-NxYyoplVCwzc3rZpnQ/view?usp=drive_link" target="_blank" class="btn-secondary inline-block mt-auto">View Certificate <i class="bx bx-link-external ml-2"></i></a>
                 </div>
+
+                <div class="card text-center flex flex-col">
+                    <i class='bx bxl-java text-7xl text-red-400 mb-4'></i>
+                    <h3 class="text-2xl font-semibold text-red-300 mb-2">Java Collections & Stream API</h3>
+                    <p class="text-gray-400 mb-4 flex-grow">Learned to handle data structures, generics, and lambda expressions efficiently. (Udemy, 2025)</p>
+                    <a href="https://drive.google.com/file/d/1haBhEbuRSnS2IyN5yuZwdkJSbm3bpOaq/view?usp=drive_link" target="_blank" class="btn-secondary inline-block mt-auto">View Certificate <i class="bx bx-link-external ml-2"></i></a>
+                </div>
+
+                <div class="card text-center flex flex-col">
+                    <i class='bx bxl-python text-7xl text-yellow-400 mb-4'></i>
+                    <h3 class="text-2xl font-semibold text-yellow-300 mb-2">Python Programming</h3>
+                    <p class="text-gray-400 mb-4 flex-grow">Built programming logic using Python syntax, functions, and structured I/O. (Dicoding, 2025)</p>
+                    <a href="https://drive.google.com/file/d/1yOa7wSnCsuX9g0zQQauH1RqQU21dF7qh/view?usp=drive_link" target="_blank" class="btn-secondary inline-block mt-auto">View Certificate <i class="bx bx-link-external ml-2"></i></a>
+                </div>
+
+                <div class="card text-center flex flex-col">
+                    <i class='bx bx-shield-quarter text-7xl text-gray-400 mb-4'></i>
+                    <h3 class="text-2xl font-semibold text-gray-300 mb-2">Practical IoT Security</h3>
+                    <p class="text-gray-400 mb-4 flex-grow">Introduced to penetration testing for IoT devices and network sniffing. (Udemy, 2025)</p>
+                    <a href="https://drive.google.com/file/d/1-Bv55BambEhJUz0xWbLASKVDPlkBJqCZ/view?usp=drive_link" target="_blank" class="btn-secondary inline-block mt-auto">View Certificate <i class="bx bx-link-external ml-2"></i></a>
+                </div>
+
+                <div class="card text-center flex flex-col">
+                    <i class='bx bx-bar-chart-alt-2 text-7xl text-cyan-400 mb-4'></i>
+                    <h3 class="text-2xl font-semibold text-cyan-300 mb-2">HR People Analytics</h3>
+                    <p class="text-gray-400 mb-4 flex-grow">Learned to interpret HR data and apply analytics in decision-making. (Udemy, 2025)</p>
+                    <a href="https://drive.google.com/file/d/10wEmP52w-6f9_EfnURtrnlpYwslsPUsU/view?usp=drive_link" target="_blank" class="btn-secondary inline-block mt-auto">View Certificate <i class="bx bx-link-external ml-2"></i></a>
+                </div>
+                
+                <div class="card text-center flex flex-col">
+                    <i class='bx bx-mobile-alt text-7xl text-green-400 mb-4'></i>
+                    <h3 class="text-2xl font-semibold text-green-300 mb-2">Design a Mobile App</h3>
+                    <p class="text-gray-400 mb-4 flex-grow">Learned the end-to-end process from wireframing to interactive prototypes. (Domestika, 2025)</p>
+                    <a href="https://drive.google.com/file/d/1Z8wFUE-boKvDlqrbE-qWDawUzL7Zamj2/view?usp=drive_link" target="_blank" class="btn-secondary inline-block mt-auto">View Certificate <i class="bx bx-link-external ml-2"></i></a>
+                </div>
+
+                <div class="card text-center flex flex-col">
+                    <i class='bx bx-user-check text-7xl text-green-400 mb-4'></i>
+                    <h3 class="text-2xl font-semibold text-green-300 mb-2">Introduction to UX Design</h3>
+                    <p class="text-gray-400 mb-4 flex-grow">Gained knowledge in user research, persona creation, and usability testing. (Domestika, 2025)</p>
+                    <a href="https://drive.google.com/file/d/10dQHsLAjP_ABYVwWrgqlerzxN8cSVNEw/view?usp=drive_link" target="_blank" class="btn-secondary inline-block mt-auto">View Certificate <i class="bx bx-link-external ml-2"></i></a>
+                </div>
+
             </div>
         </section>
-
-        <!-- Parallax Section -->
         <section id="parallax-banner" class="parallax-section mb-20">
             <div class="parallax-content">
                 <h2 class="text-white">"I believe that a great product is born at the intersection of powerful code and intuitive design."</h2>
-                <a href="#contact" class="btn-primary text-xl bg-white text-blue-600 hover:bg-gray-100">Hubungi Saya <i class="bx bx-chat ml-2"></i></a>
+                <a href="#contact" class="btn-primary text-xl bg-white text-blue-600 hover:bg-gray-100">Contact Me <i class="bx bx-chat ml-2"></i></a>
             </div>
         </section>
 
-        <!-- About Us Section -->
-        <section id="about" class="mb-20 hidden">
-            <h2 class="section-title text-4xl md:text-5xl">Tentang Saya</h2>
+        <section id="about" class="mb-20">
+            <h2 class="section-title text-4xl md:text-5xl">About Me</h2>
             <div class="card text-center p-8">
                 <p class="text-lg text-gray-300 mb-6">As an Information Systems student, I discovered my true passion lies not just in analyzing systems, but in the creative process of building them. With a solid foundation in front-end technologies like HTML, CSS, and JavaScript, I enjoy bringing ideas to life in the browser.</p>
                 <p class="text-lg text-gray-300">I believe that a great product is born at the intersection of powerful code and intuitive design. This belief drives my enthusiasm to continuously develop my skills in UI/UX, ensuring that the solutions I build are not only functional but also deliver a seamless and engaging user experience.</p>
             </div>
         </section>
 
-        <!-- Contact Section -->
-        <section id="contact" class="mb-20 hidden">
-            <h2 class="section-title text-4xl md:text-5xl">Hubungi Saya</h2>
+        <section id="contact" class="mb-20">
+            <h2 class="section-title text-4xl md:text-5xl">Contact Me</h2>
             <div class="card max-w-xl mx-auto p-8">
                 <div class="text-center mb-8">
-                    <p class="text-gray-400 mb-6">Anda dapat menemukan saya di platform berikut, atau kirimkan saya pesan langsung di bawah ini.</p>
+                    <p class="text-gray-400 mb-6">You can find me on the following platforms, or send me a direct message below.</p>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-left">
                         <a href="mailto:kakafajri02@gmail.com" class="flex items-center p-3 bg-gray-700 rounded-lg hover:bg-gray-600 transition-colors">
                             <i class='bx bx-envelope text-2xl text-blue-400 mr-3'></i>
@@ -652,9 +763,9 @@
                             <i class='bx bxl-github text-2xl text-blue-400 mr-3'></i>
                             <span>github.com/PigeonMonicaED</span>
                         </a>
-                        <a href="https://www.linkedin.com/in/kaka-fajri-riramsyah" target="_blank" class="flex items-center p-3 bg-gray-700 rounded-lg hover:bg-gray-600 transition-colors">
+                        <a href="https://www.linkedin.com/in/kaka-fajri-riramsyah-b5235228b/" target="_blank" class="flex items-center p-3 bg-gray-700 rounded-lg hover:bg-gray-600 transition-colors">
                             <i class='bx bxl-linkedin-square text-2xl text-blue-400 mr-3'></i>
-                            <span>linkedin.com/in/kaka-fajri-riramsyah</span>
+                            <span>kaka fajri Riramsyah</span>
                         </a>
                         <a href="https://www.instagram.com/kakafajrii" target="_blank" class="flex items-center p-3 bg-gray-700 rounded-lg hover:bg-gray-600 transition-colors col-span-1 sm:col-span-2">
                             <i class='bx bxl-instagram text-2xl text-blue-400 mr-3'></i>
@@ -662,54 +773,74 @@
                         </a>
                     </div>
                 </div>
-
                 <div class="border-t border-gray-600 my-8"></div>
+                <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="access_key" value="f07c4ec8-7ef3-4e53-9f67-15969a28c40e">
+                    <input type="hidden" name="subject" value="New Contact Form Submission from Portfolio">
+                    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
 
-                <form id="contact-form">
                     <div class="mb-6">
-                        <label for="contact-name" class="block text-gray-300 text-sm font-bold mb-2">Nama Anda:</label>
-                        <input type="text" id="contact-name" name="name" placeholder="Masukkan nama Anda" required>
+                        <label for="contact-name" class="block text-gray-300 text-sm font-bold mb-2">Your Name:</label>
+                        <input type="text" id="contact-name" name="name" placeholder="Enter your name" required>
                     </div>
                     <div class="mb-6">
-                        <label for="contact-email" class="block text-gray-300 text-sm font-bold mb-2">Email Anda:</label>
-                        <input type="email" id="contact-email" name="email" placeholder="Masukkan email Anda" required>
+                        <label for="contact-email" class="block text-gray-300 text-sm font-bold mb-2">Your Email:</label>
+                        <input type="email" id="contact-email" name="email" placeholder="Enter your email" required>
                     </div>
                     <div class="mb-8">
-                        <label for="contact-message" class="block text-gray-300 text-sm font-bold mb-2">Pesan Anda:</label>
-                        <textarea id="contact-message" name="message" rows="6" placeholder="Tulis pesan Anda di sini..." required></textarea>
+                        <label for="contact-message" class="block text-gray-300 text-sm font-bold mb-2">Your Message:</label>
+                        <textarea id="contact-message" name="message" rows="6" placeholder="Write your message here..." required></textarea>
                     </div>
                     <div class="flex items-center justify-center">
-                        <button type="submit" class="btn-primary text-lg">Kirim Pesan <i class="bx bx-send ml-2"></i></button>
+                        <button type="submit" class="btn-primary text-lg">Send Message <i class="bx bx-send ml-2"></i></button>
                     </div>
                 </form>
             </div>
         </section>
-
     </main>
 
-    <!-- Footer -->
     <footer class="footer">
         <p>&copy; 2025 Kaka Fajri Riramsyah. All Rights Reserved.</p>
         <div class="flex justify-center space-x-6 mt-4">
             <a href="https://github.com/PigeonMonicaED" target="_blank" class="text-white hover:text-blue-400 transition duration-200"><i class="bx bxl-github text-3xl"></i></a>
-            <a href="https://www.linkedin.com/in/kaka-fajri-riramsyah" target="_blank" class="text-white hover:text-blue-400 transition duration-200"><i class="bx bxl-linkedin-square text-3xl"></i></a>
+            <a href="https://www.linkedin.com/in/kaka-fajri-riramsyah-b5235228b/" target="_blank" class="text-white hover:text-blue-400 transition duration-200"><i class="bx bxl-linkedin-square text-3xl"></i></a>
             <a href="https://www.instagram.com/kakafajrii" target="_blank" class="text-white hover:text-blue-400 transition duration-200"><i class="bx bxl-instagram text-3xl"></i></a>
         </div>
     </footer>
 
-    <!-- Tombol Scroll to Top -->
-    <button id="scrollToTopBtn" title="Gulir ke atas"><i class="bx bx-up-arrow-alt"></i></button>
+    <button id="scrollToTopBtn" title="Scroll to top"><i class="bx bx-up-arrow-alt"></i></button>
 
-    <!-- Custom Message Box HTML -->
     <div id="customMessageBoxOverlay" class="custom-message-box-overlay">
         <div class="custom-message-box">
             <h3 id="messageBoxTitle"></h3>
             <p id="messageBoxContent"></p>
-            <button id="messageBoxCloseBtn">Tutup</button>
+            <button id="messageBoxCloseBtn">Close</button>
         </div>
     </div>
 
-    <!-- Scripts -->
+    <div id="project-modal" class="modal-overlay">
+        <div class="modal-container">
+            <i id="modal-close" class="bx bx-x modal-close-btn"></i>
+            <div class="modal-header">
+                <h3 id="modal-title"></h3>
+            </div>
+            <div class="modal-body">
+                <h4>Summary</h4>
+                <p id="modal-summary"></p>
+                
+                <h4>Project Type & Role</h4>
+                <p id="modal-type-role"></p>
+                
+                <h4>Key Takeaways</h4>
+                <p id="modal-takeaways"></p>
+                
+                <h4>Key Skills</h4>
+                <div id="modal-skills" class="modal-skills"></div>
+            </div>
+            <div id="modal-links" class="modal-links"></div>
+        </div>
+    </div>
+
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.36/dist/fancybox/fancybox.umd.js"></script>
@@ -717,9 +848,7 @@
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-
     <script>
-        // Fungsi untuk menampilkan pesan kustom
         function showMessage(title, content) {
             $('#messageBoxTitle').text(title);
             $('#messageBoxContent').text(content);
@@ -727,7 +856,6 @@
         }
 
         $(document).ready(function(){
-            // Inisialisasi Owl Carousel
             $(".owl-carousel").owlCarousel({
                 loop: true,
                 margin: 20,
@@ -740,10 +868,7 @@
                 }
             });
 
-            // GSAP ScrollTrigger untuk animasi saat scroll
             gsap.registerPlugin(ScrollTrigger);
-
-            // Animasi untuk elemen-elemen utama
             const animateOnScroll = (selector) => {
                 gsap.utils.toArray(selector).forEach(element => {
                     gsap.from(element, {
@@ -767,34 +892,15 @@
                 ease: "power3.out",
                 stagger: 0.2
             });
-
             animateOnScroll('.card, .section-title, .parallax-section');
 
-            // Fungsi untuk menampilkan/menyembunyikan section
-            function showSection(id) {
-                // Sembunyikan semua section utama
-                $('main > section').addClass('hidden');
-                // Tampilkan section yang diminta
-                $(id).removeClass('hidden');
-
-                // Jika target adalah #home, tampilkan juga section lain yang seharusnya terlihat
-                if (id === '#home') {
-                    $('#projects, #skills, #parallax-banner').removeClass('hidden');
-                }
-
-
-                // Gulir ke bagian yang ditampilkan
-                $('html, body').animate({
-                    scrollTop: $(id).offset().top - $('.header').outerHeight() - 20
-                }, 500);
-            }
-            
-            // Event listener untuk navigasi
-            $('nav a, .mobile-nav-link, .btn-primary[href="#contact"], .btn-primary[href="#projects"]').on('click', function(e) {
-                e.preventDefault();
+            $('nav a, .mobile-nav-link, .btn-primary[href="#contact"], .btn-primary[href="#projects"], .parallax-content a').on('click', function(e) {
                 const targetId = $(this).attr('href');
                 if (targetId.startsWith('#')) {
-                    showSection(targetId);
+                    e.preventDefault();
+                    $('html, body').animate({
+                        scrollTop: $(targetId).offset().top - $('.header').outerHeight() - 20
+                    }, 500);
                     if ($('.mobile-menu-overlay').hasClass('active')) {
                         $('.mobile-menu-overlay').removeClass('active');
                         $('body').css('overflow', '');
@@ -802,24 +908,40 @@
                 }
             });
 
-            // Tampilkan halaman utama saat pertama kali dimuat
-            $('main > section').addClass('hidden');
-            $('#home, #projects, #skills, #parallax-banner').removeClass('hidden');
-
-
-            // Form Kontak
             $('#contact-form').on('submit', function(e) {
                 e.preventDefault();
-                const name = $('#contact-name').val();
-                if (name) {
-                    showMessage('Pesan Terkirim!', `Terima kasih, ${name}. Pesan Anda telah kami terima dan akan segera kami balas.`);
-                    $('#contact-form')[0].reset(); // Bersihkan form
-                } else {
-                    showMessage('Pengiriman Gagal', 'Harap isi semua kolom formulir.');
-                }
+                const form = this;
+                const formData = new FormData(form);
+
+                fetch(form.action, {
+                    method: form.method,
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                })
+                .then(response => {
+                    if (response.ok) {
+                        return response.json();
+                    }
+                    throw new Error('Network response was not ok.');
+                })
+                .then(data => {
+                    if (data.success) {
+                        const name = $('#contact-name').val();
+                        showMessage('Message Sent!', `Thank you, ${name}. Your message has been received and I will get back to you shortly.`);
+                        form.reset();
+                    } else {
+                        console.error('Error from Web3Forms:', data);
+                        showMessage('Submission Failed', data.message || 'An error occurred while sending the message. Please try again.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Submission error:', error);
+                    showMessage('Submission Failed', 'A network error occurred. Please check your connection and try again.');
+                });
             });
 
-            // Logika tombol Scroll to Top
             const scrollToTopBtn = $("#scrollToTopBtn");
             $(window).on('scroll', function() {
                 if ($(this).scrollTop() > 200) {
@@ -832,7 +954,6 @@
                 $('html, body').animate({ scrollTop: 0 }, 800);
             });
 
-            // Logika Mobile Menu (Hamburger)
             const hamburgerBtn = $('#hamburger-btn');
             const mobileMenu = $('#mobile-menu');
             const closeMenuBtn = $('#close-menu-btn');
@@ -841,15 +962,113 @@
                 mobileMenu.addClass('active');
                 $('body').css('overflow', 'hidden');
             });
-
             closeMenuBtn.on('click', () => {
                 mobileMenu.removeClass('active');
                 $('body').css('overflow', '');
             });
 
-            // Tutup Custom Message Box
             $('#messageBoxCloseBtn').on('click', function() {
                 $('#customMessageBoxOverlay').removeClass('active');
+            });
+
+            const projectData = {
+                susvara: {
+                    title: 'SusVara Website',
+                    summary: 'A web platform for the IFEST 2025 competition. The project addresses sustainability challenges in the fashion industry by championing "Slow Fashion" as a conscious alternative to the prevailing fast fashion trend.',
+                    typeRole: 'Group Project (IFEST Competition) | My Role: Team Lead & Frontend Developer',
+                    takeaways: 'The most engaging part was brainstorming and selecting a sustainability topic. Choosing to focus on slow fashion allowed for deep exploration of a meaningful issue and translating that concept into a compelling digital showcase.',
+                    skills: ['Leadership', 'Project Management', 'HTML & CSS', 'JavaScript', 'Responsive Design', 'Figma'],
+                    links: {
+                        github: 'https://github.com/PigeonMonicaED/SusVara-WEBSITE',
+                        demo: 'https://pigeonmonicaed.github.io/SusVara-WEBSITE/'
+                    }
+                },
+                growease: {
+                    title: 'PMW "GROWEASE"',
+                    summary: 'An entrepreneurial project proposal, initially for a university course, which was later nominated for the PMW program and is now under review for the national P2MW selection by Belmawa.',
+                    typeRole: 'Entrepreneurial Group Project | My Role: Finance Lead',
+                    takeaways: 'A key highlight was the collaborative discussion to select a compelling topic. We focused on finding an entrepreneurial concept deeply rooted in sustainability, which shaped our entire business plan and financial model.',
+                    skills: ['Financial Planning', 'Budgeting', 'Profit Margin Calculation', 'Cost Analysis', 'Business Proposal'],
+                    links: {}
+                },
+                tenantinn: {
+                    title: 'TenantInn: Homestay Admin System',
+                    summary: 'A full-stack web application built to solve a real client\'s operational challenges. The system digitizes key processes for a homestay, specifically targeting their issues with manual inventory tracking and invoice generation.',
+                    typeRole: 'Academic Project | My Role: Full-Stack Developer',
+                    takeaways: 'The core of this project was translating a client\'s problem into a technical solution. I learned to identify the main pain points—manual stock management and invoicing—and build a targeted web app that directly solves these core issues, improving efficiency.',
+                    skills: ['Full-Stack Dev', 'MySQL', 'Database Design', 'Client Communication', 'Problem Solving'],
+                    links: {
+                        demo: 'http://tenantinn.site/'
+                    }
+                },
+                facerecog: {
+                    title: 'Face Recognition Attendance App',
+                    summary: 'A functional desktop app developed to solve a real-world problem identified during an interview with "LITTLE CAVE hidden coffee bar" in Surabaya. The app replaces their manual employee attendance system, aligning with the IoT theme of the assignment.',
+                    typeRole: 'Academic Project | My Role: Product Designer & Developer',
+                    takeaways: 'This project was an exciting challenge in direct problem-solving. It involved moving from user interview insights to a functional IoT-based solution. Integrating OpenCV with a PyQt5 GUI to handle real-time video for facial recognition was a major technical achievement.',
+                    skills: ['User Research', 'Figma', 'PyQt5', 'OpenCV', 'Python', 'IoT'],
+                    links: {
+                        github: 'https://github.com/PigeonMonicaED/face-recognition-re....',
+                        figma: 'https://www.figma.com/proto/LZrQc9tbQrEnmUBKz1L5sP/Mockup...'
+                    }
+                },
+                genz: {
+                    title: 'Gen Z Cooperative Website',
+                    summary: 'A UI/UX design project for a Human-Computer Interaction course. The goal was to design a modern cooperative website aimed at a Gen Z audience, a demographic that is typically underserved by such services.',
+                    typeRole: 'Academic Group Project | My Role: UI/UX Designer',
+                    takeaways: 'This project was a fascinating introduction to UI/UX design. The challenge of digitizing a traditional business sector like cooperatives for a new generation was a great learning experience. It was also my first time using a rapid prototyping tool like Wix to develop and visualize a concept.',
+                    skills: ['UI/UX Design', 'Rapid Prototyping', 'User-Centered Design', 'Wix Platform'],
+                    links: {
+                        demo: 'https://stevani23258.wixsite.com/gen-z-coorperative-2'
+                    }
+                }
+            };
+
+            const modal = $('#project-modal');
+            const modalTitle = $('#modal-title');
+            const modalSummary = $('#modal-summary');
+            const modalTypeRole = $('#modal-type-role');
+            const modalTakeaways = $('#modal-takeaways');
+            const modalSkills = $('#modal-skills');
+            const modalLinks = $('#modal-links');
+
+            $('.project-detail-btn').on('click', function() {
+                const projectId = $(this).data('project');
+                const data = projectData[projectId];
+                if (data) {
+                    modalTitle.text(data.title);
+                    modalSummary.text(data.summary);
+                    modalTypeRole.text(data.typeRole);
+                    modalTakeaways.text(data.takeaways);
+                    
+                    modalSkills.empty();
+                    data.skills.forEach(skill => {
+                        modalSkills.append(`<span class="modal-skill-tag">${skill}</span>`);
+                    });
+
+                    modalLinks.empty();
+                    if (data.links.demo) {
+                        modalLinks.append(`<a href="${data.links.demo}" target="_blank" class="modal-link"><i class='bx bx-link-external'></i>Live Demo</a>`);
+                    }
+                    if (data.links.github) {
+                        modalLinks.append(`<a href="${data.links.github}" target="_blank" class="modal-link"><i class='bx bxl-github'></i>GitHub Repo</a>`);
+                    }
+                     if (data.links.figma) {
+                        modalLinks.append(`<a href="${data.links.figma}" target="_blank" class="modal-link"><i class='bx bxl-figma'></i>Figma Mockup</a>`);
+                    }
+                    modal.addClass('active');
+                }
+            });
+
+            function closeModal() {
+                modal.removeClass('active');
+            }
+
+            $('#modal-close').on('click', closeModal);
+            modal.on('click', function(e) {
+                if ($(e.target).is(modal)) {
+                    closeModal();
+                }
             });
         });
     </script>
